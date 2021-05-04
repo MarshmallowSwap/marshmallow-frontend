@@ -35,11 +35,28 @@ const config: MenuEntry[] = [
     icon: 'FarmIcon',
     href: 'http://safefarms.marshmallowdefi.com/info',
   },
+  // {
+  //   label: 'Audit',
+  //   icon: 'AuditIcon',
+  //   href: 'https://marshmallowdefi.com/Audit.pdf',
+  // },
+
+
   {
     label: 'Audit',
     icon: 'AuditIcon',
-    href: 'https://marshmallowdefi.com/Audit.pdf',
+    items: [
+      {
+        label: 'Techrate',
+        href: 'https://marshmallowdefi.com/Audit.pdf',
+      },
+      {
+        label: 'CERTIK',
+        href: 'https://certik.org/projects/marshmallow',
+      },
+    ],
   },
+
   {
     label: 'Partnership',
     icon: 'AuditIcon',

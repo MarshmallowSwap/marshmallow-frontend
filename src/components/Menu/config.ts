@@ -26,6 +26,11 @@ const config: MenuEntry[] = [
     href: 'http://marshmallowdefi.com/farms',
   },
   {
+    label: 'Lauchpoolllllooooo',
+    icon: 'FarmIcon',
+    href: 'http://marshmallowdefi.com/farms',
+  },
+  {
     label: 'Pools',
     icon: 'PoolIcon',
     href: 'http://marshmallowdefi.com/pools',

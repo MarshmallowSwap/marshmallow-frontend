@@ -10,21 +10,34 @@ import TotalValueLockedCard from './components/TotalValueLockedCard'
 import TwitterCard from './components/TwitterCard'
 
 const Hero = styled.div`
+  // align-items: center;
+  // background-image: url('/images/egg/3.png');
+  // background-repeat: no-repeat;
+  // background-position: top center;
+  // display: flex;
+  // justify-content: center;
+  // flex-direction: column;
+  // margin: auto;
+  // margin-bottom: 32px;
+  // padding-top: 116px;
+  // text-align: center;
+
+  background-image: url('/images/egg/alert_2.jpg');
   align-items: center;
-  background-image: url('/images/egg/3.png');
-  background-repeat: no-repeat;
-  background-position: top center;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: auto;
-  margin-bottom: 32px;
   padding-top: 116px;
   text-align: center;
+  background-repeat: no-repeat;
 
   ${({ theme }) => theme.mediaQueries.lg} {
-    background-image: url('/images/egg/3.png'), url('/images/egg/3b.png');
-    background-position: left center, right center;
+    // background-image: url('/images/egg/3.png'), url('/images/egg/3b.png');
+    // background-position: left center, right center;
+    // height: 165px;
+    // padding-top: 0;
+
+    background-position: center;
     height: 165px;
     padding-top: 0;
   }
@@ -60,9 +73,9 @@ const Home: React.FC = () => {
     <Page>
       <Hero>
         <Heading as="h1" size="xl" mb="24px" color="secondary">
-          {TranslateString(576, 'MarshamallowDeFi')}
+          {/* {TranslateString(576, 'MarshamallowDeFi')} */}
         </Heading>
-        <Text>The sweetest and softest yield farm on the Binance Smart Chain!</Text>
+        {/* <Text>The sweetest and softest yield farm on the Binance Smart Chain!</Text> */}
       </Hero>
       <div>
         <Cards>

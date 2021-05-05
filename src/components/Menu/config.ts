@@ -11,7 +11,7 @@ const config: MenuEntry[] = [
     icon: 'TradeIcon',
     items: [
       {
-        label: 'Exchange',
+        label: 'EXChange',
         href: 'http://exchange.marshmallowdefi.com/',
       },
       {

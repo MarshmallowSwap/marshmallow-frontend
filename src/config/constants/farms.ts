@@ -3,22 +3,6 @@ import { FarmConfig, QuoteToken } from './types'
 
 const farms: FarmConfig[] = [
   {
-    pid: 20,
-    risk: 5,
-    lpSymbol: 'MASH-ETH LP',
-    lpAddresses: {
-      97: '',
-      56: '0x548997391C670A5179AF731A30e7C3aDA2f483e7',
-    },
-    tokenSymbol: 'MASH',
-    tokenAddresses: {
-      97: '',
-      56: '0x787732f27d18495494cea3792ed7946bbcff8db2',
-    },
-    quoteTokenSymbol: QuoteToken.ETH,
-    quoteTokenAdresses: contracts.eth,
-  },
-  {
     pid: 0,
     risk: 5,
     lpSymbol: 'MASH-BUSD LP',
@@ -33,6 +17,22 @@ const farms: FarmConfig[] = [
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
+  },
+    {
+    pid: 20,
+    risk: 5,
+    lpSymbol: 'MASH-ETH LP',
+    lpAddresses: {
+      97: '',
+      56: '0x548997391C670A5179AF731A30e7C3aDA2f483e7',
+    },
+    tokenSymbol: 'MASH',
+    tokenAddresses: {
+      97: '',
+      56: '0x787732f27d18495494cea3792ed7946bbcff8db2',
+    },
+    quoteTokenSymbol: QuoteToken.ETH,
+    quoteTokenAdresses: contracts.eth,
   },
   {
     pid: 1,

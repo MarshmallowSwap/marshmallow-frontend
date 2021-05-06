@@ -75,6 +75,7 @@ const Home: React.FC = () => {
         <Heading as="h1" size="xl" mb="24px" color="secondary">
           {TranslateString(576, 'MarshamallowDeFi')}
         </Heading>
+        
         <Text>The sweetest and softest yield farm on the Binance Smart Chain!</Text>
       </Hero>
       <div>

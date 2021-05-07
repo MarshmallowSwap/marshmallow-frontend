@@ -30,7 +30,7 @@ const Menu = (props) => {
         priceLink="https://bscscan.com/token/0x787732f27d18495494cea3792ed7946bbcff8db2"
         {...props}
       />
-      <Countdown />
+      {/* <Countdown /> */}
     </>
   )
 }

@@ -57,7 +57,7 @@ const Countdown = () => {
     if (started) return
 
     setInterval(() => {
-      setCountdown(prev => prev - 1)
+      setCountdown(prev => prev === 0 ? prev : prev - 1)
     }, 1000)
   }, [started])
 

@@ -22,7 +22,7 @@ const Hero = styled.div`
   // padding-top: 116px;
   // text-align: center;
 
-  background-image: url('/images/egg/alert_4.jpg');
+  // background-image: url('/images/egg/alert_4.jpg');
   align-items: center;
   display: flex;
   justify-content: center;

@@ -101,10 +101,8 @@ const CardFooter: React.FC<Props> = ({
         <Details>
           <Row style={{ marginBottom: '4px' }}>
             <FlexFull>
-              <Label>
-                <span role="img" aria-label="syrup">
-                  🥞{' '}
-                </span>
+              <Label style={{display: 'flex', alignItems: 'center'}}>
+                <img src='images/egg/2c.png' alt='' style={{width: '16px', height: '16px', marginRight: '4px'}} />
                 {TranslateString(408, 'Total')}
               </Label>
             </FlexFull>

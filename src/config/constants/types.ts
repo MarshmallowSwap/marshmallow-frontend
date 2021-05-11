@@ -29,6 +29,7 @@ export enum QuoteToken {
   'WCAKE' = 'WCAKE',
   'VAULT' = 'VAULT',
   'BTCB' = 'BTCB',
+  'MASH' = 'MASH'
 }
 
 export enum PoolCategory {
@@ -70,12 +71,22 @@ export interface PoolConfig {
   stakingTokenAddress?: string
   contractAddress: Address
   poolCategory: PoolCategory
-  projectLink: string
+  projectLink: string,
+  withwithdrawFee?: boolean,
+  withdrawFee?: number,
+  isLPReward ?: boolean,  isLPStake ?: boolean,
+  withwithdrawDepositFee?:boolean,
+  depositFee?:number,
+  noApy?:boolean,
   tokenPerBlock: string
   sortOrder?: number
   harvest?: boolean
   isFinished?: boolean
   tokenDecimals: number
+  startBlock? :number
+  endBlock? : number
+  slimeRounding? : number,
+  isSlimeAMM? : boolean
 }
 
 export type Nft = {

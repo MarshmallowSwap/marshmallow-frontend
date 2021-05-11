@@ -1,8 +1,8 @@
 import { useCallback } from 'react'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import { useDispatch } from 'react-redux'
+import { fetchFarmUserDataAsync} from 'state/farms'
 import {
-  fetchFarmUserDataAsync,
   updateUserStakedBalance,
   updateUserBalance,
   updateUserPendingReward,
@@ -42,7 +42,7 @@ export const useSousUnstake = (sousId) => {
         const txHash = await unstake(masterChefContract, 0, amount, account)
         console.info(txHash)
       } else if (isOldSyrup) {
-        const txHash = await sousEmegencyUnstake(sousChefContract, amount, account)
+        const txHash = await sousUnstake(sousChefContract, amount, account)
         console.info(txHash)
       } else {
         const txHash = await sousUnstake(sousChefContract, amount, account)

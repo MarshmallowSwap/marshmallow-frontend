@@ -6,7 +6,6 @@ import useTheme from 'hooks/useTheme'
 import { usePriceCakeBusd } from 'state/hooks'
 import { Menu as UikitMenu } from '@pancakeswap-libs/uikit'
 import config from './config'
-import Countdown from './Countdown';
 
 const Menu = (props) => {
   const { account, connect, reset } = useWallet()
@@ -30,7 +29,6 @@ const Menu = (props) => {
         priceLink="https://bscscan.com/token/0x787732f27d18495494cea3792ed7946bbcff8db2"
         {...props}
       />
-      {/* <Countdown /> */}
     </>
   )
 }

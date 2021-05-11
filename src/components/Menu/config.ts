@@ -4,7 +4,7 @@ const config: MenuEntry[] = [
   {
     label: 'Home',
     icon: 'HomeIcon',
-    href: 'http://marshmallowdefi.com/',
+    href: '/',
   },
   {
     label: 'Trade',
@@ -23,17 +23,22 @@ const config: MenuEntry[] = [
   {
     label: 'Farms',
     icon: 'FarmIcon',
-    href: 'http://marshmallowdefi.com/farms',
+    href: '/farms',
   },
   {
     label: 'Pools',
     icon: 'PoolIcon',
-    href: 'http://marshmallowdefi.com/pools',
+    href: '/pools',
   },
   {
     label: 'SafeFarms',
     icon: 'FarmIcon',
     href: 'http://safefarms.marshmallowdefi.com/info',
+  },
+  {
+    label: 'Launch Pools',
+    icon: 'PoolIcon',
+    href: '/launch',
   },
   // {
   //   label: 'Audit',
@@ -48,7 +53,7 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Techrate',
-        href: 'https://marshmallowdefi.com/Audit.pdf',
+        href: '/Audit.pdf',
       },
       {
         label: 'CERTIK',

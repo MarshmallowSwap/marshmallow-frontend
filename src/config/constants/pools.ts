@@ -1,23 +1,33 @@
 import { PoolConfig, QuoteToken, PoolCategory } from './types'
 
+const MASH = 'MASH';
+
 const pools: PoolConfig[] = [
-  // {
-  //   sousId: 0,
-  //   tokenName: 'CAKE',
-  //   stakingTokenName: QuoteToken.CAKE,
-  //   stakingTokenAddress: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
-  //   contractAddress: {
-  //     97: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',
-  //     56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
-  //   },
-  //   poolCategory: PoolCategory.CORE,
-  //   projectLink: 'https://pancakeswap.finance/',
-  //   harvest: true,
-  //   tokenPerBlock: '10',
-  //   sortOrder: 1,
-  //   isFinished: false,
-  //   tokenDecimals: 18,
-  // },
+  {
+    sousId:8,
+    tokenName: 'Mash-SlimeV2 LP',
+    stakingTokenName: QuoteToken[MASH],
+    stakingTokenAddress: '0x787732f27d18495494cea3792ed7946bbcff8db2',
+    contractAddress: {
+      97: '0x616Fb4f5a721E82e22Bd89aF0a2A494f34dC4bd7',
+      56: '0x616Fb4f5a721E82e22Bd89aF0a2A494f34dC4bd7',
+    },
+    poolCategory: PoolCategory.CORE,
+    projectLink: 'https://app.slime.finance/',
+    harvest: true,
+    isFinished: false,
+    tokenPerBlock: '0.000856329483621793',
+    sortOrder: 1,
+    tokenDecimals: 18,
+    startBlock: 7323438,
+    endBlock: 7525038,
+    withwithdrawFee:true,
+    isLPStake:false,
+    isLPReward:true,
+    withdrawFee:0,
+    slimeRounding:5,
+    image: 'mash-slime'
+  },
   // {
   //   sousId: 1,
   //   tokenName: 'TWT',

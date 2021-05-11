@@ -315,11 +315,6 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
   },
- 
-  
-  
-  
-  
 ]
 
 

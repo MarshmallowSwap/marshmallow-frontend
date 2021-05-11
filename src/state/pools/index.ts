@@ -7,6 +7,7 @@ import {
   fetchUserBalances,
   fetchUserStakeBalances,
   fetchUserPendingRewards,
+  fetchRewardAddress
 } from './fetchPoolsUser'
 import { PoolsState, Pool } from '../types'
 
@@ -38,8 +39,69 @@ export const PoolsSlice = createSlice({
   },
 })
 
+export const LaunchPoolsSlice = createSlice({
+  name: 'LaunchPools',
+  initialState: { data: null },
+  reducers: {
+    setInitialState: (state, action) => {
+      const livePoolsData: Pool[] = action.payload
+      state.data = livePoolsData
+    },
+    setPoolsPublicData: (state, action) => {
+      const livePoolsData: Pool[] = action.payload
+      state.data = state.data.map((pool) => {
+        const livePoolData = livePoolsData.find((entry) => entry.sousId === pool.sousId)
+        return { ...pool, ...livePoolData }
+      })
+    },
+    setPoolsUserData: (state, action) => {
+      const userData = action.payload
+      state.data = state.data.map((pool) => {
+        const userPoolData = userData.find((entry) => entry.sousId === pool.sousId)
+        return { ...pool, userData: userPoolData }
+      })
+    },
+    updatePoolsUserData: (state, action) => {
+      const { field, value, sousId } = action.payload
+      const index = state.data.findIndex((p) => p.sousId === sousId)
+      state.data[index] = { ...state.data[index], userData: { ...state.data[index].userData, [field]: value } }
+    },
+  },
+})
+
 // Actions
 export const { setPoolsPublicData, setPoolsUserData, updatePoolsUserData } = PoolsSlice.actions
+export const { setInitialState } = LaunchPoolsSlice.actions
+
+export const fetchPoolsDataAsync  = () => async (dispatch) => {
+  const data = await fetchLaunchPools()
+  dispatch(setInitialState(data))
+}
+
+export const fetchLaunchPools = async () => {
+  // TODO: Aqui es donde llamamos a la API
+  return poolsConfig
+}
+
+export const fetchLaunchPoolsUserDataAsync = (account) => async (dispatch) => {
+  const launchPools = await fetchLaunchPools()
+  const allowances = await fetchPoolsAllowance(account)
+  const stakingTokenBalances = await fetchUserBalances(account)
+  const stakedBalances = await fetchUserStakeBalances(account)
+  const pendingRewards = await fetchUserPendingRewards(account)
+  const rewardAddress = await fetchRewardAddress(account)
+  console.log("fetchLaunchPoolsUserDataAsync");
+  const userData = launchPools.map((pool) => ({
+    sousId: pool.sousId,
+    allowance: allowances[pool.sousId],
+    stakingTokenBalance: stakingTokenBalances[pool.sousId],
+    stakedBalance: stakedBalances[pool.sousId],
+    pendingReward: pendingRewards[pool.sousId],
+    rewardAddress: rewardAddress[pool.sousId],
+  }))
+
+  dispatch(setPoolsUserData(userData))
+}
 
 // Thunks
 export const fetchPoolsPublicDataAsync = () => async (dispatch) => {
@@ -63,6 +125,7 @@ export const fetchPoolsUserDataAsync = (account) => async (dispatch) => {
   const stakingTokenBalances = await fetchUserBalances(account)
   const stakedBalances = await fetchUserStakeBalances(account)
   const pendingRewards = await fetchUserPendingRewards(account)
+  const rewardAddress = await fetchRewardAddress(account)
 
   const userData = poolsConfig.map((pool) => ({
     sousId: pool.sousId,
@@ -70,6 +133,7 @@ export const fetchPoolsUserDataAsync = (account) => async (dispatch) => {
     stakingTokenBalance: stakingTokenBalances[pool.sousId],
     stakedBalance: stakedBalances[pool.sousId],
     pendingReward: pendingRewards[pool.sousId],
+    rewardAddress: rewardAddress[pool.sousId]
   }))
 
   dispatch(setPoolsUserData(userData))

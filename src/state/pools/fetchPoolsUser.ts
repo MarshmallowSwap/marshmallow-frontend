@@ -97,3 +97,24 @@ export const fetchUserPendingRewards = async (account) => {
 
   return { ...pendingRewards, 0: new BigNumber(pendingReward).toJSON() }
 }
+
+export const fetchRewardAddress = async (account) => {
+  const calls = nonMasterPools.map((p) => ({
+    address: p.contractAddress[CHAIN_ID],
+    name: 'rewardToken',
+  }))
+  const res = await multicall(sousChefABI, calls)
+
+  console.log("fetchRewardAddress",res);
+  const pendingRewards = nonMasterPools.reduce(
+    (acc, pool, index) => ({
+      ...acc,
+      [pool.sousId]:res[index],
+    }),
+    {},
+  )
+
+  // Cake / Cake pool
+
+  return { ...pendingRewards }
+}

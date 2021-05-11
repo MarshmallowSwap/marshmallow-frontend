@@ -276,7 +276,6 @@ const Pools: React.FC = () => {
 
   const [finishedPools, openPools] = partition(poolsWithApy, (pool) => pool.isFinished)
 
-  console.log('aj : ***** finishedPools, openPools => ', finishedPools, openPools);
   return (
     <Page>
       <Hero>
@@ -288,7 +287,7 @@ const Pools: React.FC = () => {
             <li>{TranslateString(406, 'Be part of our ecosystem.')}</li>
           </ul>
         </div>
-        <img src="/images/syrup.png" alt="Launch POOL icon" width={410} height={191} />
+        <img src="/images/building_big.png" alt="Launch POOL icon" width={410} height={191} />
       </Hero>
       <PoolTabButtons />
       <Divider />

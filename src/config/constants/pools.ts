@@ -9,8 +9,8 @@ const pools: PoolConfig[] = [
     stakingTokenName: QuoteToken[MASH],
     stakingTokenAddress: '0x787732f27d18495494cea3792ed7946bbcff8db2',
     contractAddress: {
-      97: '0x616Fb4f5a721E82e22Bd89aF0a2A494f34dC4bd7',
-      56: '0x616Fb4f5a721E82e22Bd89aF0a2A494f34dC4bd7',
+      97: '0xab76B5DA1af1C8091B8B8C87533627BB94D2FE36',
+      56: '0xab76B5DA1af1C8091B8B8C87533627BB94D2FE36',
     },
     poolCategory: PoolCategory.CORE,
     projectLink: 'https://app.slime.finance/',

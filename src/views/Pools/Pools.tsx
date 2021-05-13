@@ -205,7 +205,6 @@ const Pools: React.FC = () => {
     const stakingTokenFarm = farms.find((s) => s.tokenSymbol === pool.stakingTokenName)
 
     const TokenRewardAddress = pool.userData
-    console.log('aj : ***** TokenRewardAddress => ', TokenRewardAddress);
     const tkname = pool.tokenName
 
     let address = ''
@@ -250,7 +249,7 @@ const Pools: React.FC = () => {
         bbprice = bnbPriceUSD.multipliedBy(rewardTokenPriceInBNB)
       }
     }
-    console.log('RewardPrice', address, bbprice.toNumber(), price.toNumber())
+    // console.log('RewardPrice', address, bbprice.toNumber(), price.toNumber())
     // /!\ Assume that the farm quote price is BNB
     const stakingTokenPriceInBNB = isBnbPool ? new BigNumber(1) : new BigNumber(stakingTokenFarm?.tokenPriceVsQuote)
 
@@ -265,6 +264,7 @@ const Pools: React.FC = () => {
     const totalStakingTokenInPool = cakebusd.times(getBalanceNumber(pool.totalStaked))
     const apy = totalRewardPricePerYear.div(totalStakingTokenInPool).times(100)
 
+    console.log(`aj : ***** poolName: ${pool.tokenName} pool.totalStaked: ${pool.totalStaked}`);
     return {
       ...pool,
       isFinished: pool.sousId === 0 ? false : pool.isFinished || block > pool.endBlock,

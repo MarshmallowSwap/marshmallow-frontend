@@ -53,7 +53,7 @@ const DepositModal: React.FC<DepositModalProps> = ({ max, onConfirm, onDismiss, 
         symbol={tokenName}
       />
       {burnFee && (
-        <DepositFeeText>BURN FEE: {val ? parseInt(val) * burnFee / 100 : 0} MASH</DepositFeeText>
+        <DepositFeeText>BURN FEE: {(val ? parseFloat(val) * burnFee / 100 : 0).toFixed(2)} MASH</DepositFeeText>
       )}
       <ModalActions>
         <Button fullWidth variant="secondary" onClick={onDismiss}>

@@ -72,8 +72,8 @@ export interface PoolConfig {
   contractAddress: Address
   poolCategory: PoolCategory
   projectLink: string,
-  withwithdrawFee?: boolean,
-  withdrawFee?: number,
+  withBurnFee?: boolean,
+  burnFee?: number,
   isLPReward ?: boolean,  isLPStake ?: boolean,
   withwithdrawDepositFee?:boolean,
   depositFee?:number,

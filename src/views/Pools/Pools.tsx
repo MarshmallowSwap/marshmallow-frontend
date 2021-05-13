@@ -276,6 +276,7 @@ const Pools: React.FC = () => {
 
   const [finishedPools, openPools] = partition(poolsWithApy, (pool) => pool.isFinished)
 
+  console.log('aj : ***** openPools => ', openPools);
   return (
     <Page>
       <Hero>

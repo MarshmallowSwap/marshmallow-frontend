@@ -21,10 +21,10 @@ const pools: PoolConfig[] = [
     tokenDecimals: 18,
     startBlock: 7323438,
     endBlock: 7525038,
-    withwithdrawFee:true,
+    withBurnFee:true,
     isLPStake:false,
     isLPReward:true,
-    withdrawFee:0,
+    burnFee:0,
     slimeRounding:5,
     image: 'mash-slime'
   },
@@ -46,10 +46,10 @@ const pools: PoolConfig[] = [
     tokenDecimals: 18,
     startBlock: 7386238,
     endBlock: 7587838,
-    withwithdrawFee: true,
+    withBurnFee: true,
     isLPStake:false,
     isLPReward:true,
-    withdrawFee: 0,
+    burnFee: 3,
     slimeRounding: 5,
     image: 'mash-busd'
   },
@@ -71,10 +71,10 @@ const pools: PoolConfig[] = [
     tokenDecimals: 18,
     startBlock: 7386238,
     endBlock: 7587838,
-    withwithdrawFee: true,
+    withBurnFee: true,
     isLPStake:false,
     isLPReward:true,
-    withdrawFee: 0,
+    burnFee: 3,
     slimeRounding: 5,
     image: 'mash-bnb'
   }

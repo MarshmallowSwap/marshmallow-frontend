@@ -47,12 +47,12 @@ const Hero = styled.div`
 `
 
 const BannerImg = styled.img`
-  height: 30vh;
-  width: 50vw;
+  height: 34vh;
+  width: 56vw;
   object-fit: cover;
   position: absolute;
   top: 0px;
-  left: calc(50% - 25vw);
+  left: calc(50% - 28vw);
 `;
 
 const Cards = styled(BaseLayout)`

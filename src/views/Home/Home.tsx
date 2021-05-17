@@ -46,6 +46,15 @@ const Hero = styled.div`
   }
 `
 
+const BannerImg = styled.img`
+  height: 30vh;
+  width: 50vw;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  left: calc(50% - 25vw);
+`;
+
 const Cards = styled(BaseLayout)`
   align-items: stretch;
   justify-content: stretch;
@@ -77,8 +86,8 @@ const Home: React.FC = () => {
       <Hero>
         <Heading as="h1" size="xl" mb="24px" color="secondary">
           {/* {TranslateString(576, 'MarshamallowDeFi')} */}
+          <BannerImg src='images/banner.png' alt='banner' />
         </Heading>
-        
         {/* <Text>The sweetest and softest yield farm on the Binance Smart Chain!</Text> */}
       </Hero>
       <div>

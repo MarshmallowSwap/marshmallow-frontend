@@ -77,6 +77,31 @@ const pools: PoolConfig[] = [
     burnFee: 3,
     slimeRounding: 5,
     image: 'mash-bnb'
+  },
+  {
+    sousId: 3,
+    tokenName: 'MASH-PLUM LP V2',
+    stakingTokenName: QuoteToken[MASH],
+    stakingTokenAddress: '0x787732f27d18495494cea3792ed7946bbcff8db2',
+    contractAddress: {
+      97: '0x99eC02568f4090A066c027d3172d317db0DD90a4',
+      56: '0x99eC02568f4090A066c027d3172d317db0DD90a4',
+    },
+    poolCategory: PoolCategory.CORE,
+    projectLink: 'https://plumcake.finance/',
+    harvest: true,
+    isFinished: false,
+    tokenPerBlock: '0.002901785714285714',
+    sortOrder: 1,
+    tokenDecimals: 18,
+    startBlock: 7488488,
+    endBlock: 7690088,
+    withBurnFee: true,
+    isLPStake:false,
+    isLPReward:true,
+    burnFee: 3,
+    slimeRounding: 5,
+    image: 'mash-plum'
   }
   // {
   //   sousId: 1,

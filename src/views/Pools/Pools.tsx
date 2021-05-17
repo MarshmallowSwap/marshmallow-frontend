@@ -15,7 +15,7 @@ import multicall from 'utils/multicall'
 import erc20 from 'config/abi/erc20.json'
 import { getDefaultProvider } from '@ethersproject/providers'
 import { getBalanceNumber } from 'utils/formatBalance'
-import { useFarms, usePriceBnbBusd, usePools, usePriceCakeBusd } from 'state/hooks'
+import { useFarms, usePriceBnbBusd, usePools, usePriceMashBusd } from 'state/hooks'
 import { QuoteToken, PoolCategory } from 'config/constants/types'
 import FlexLayout from 'components/layout/Flex'
 import Page from 'components/layout/Page'
@@ -34,7 +34,7 @@ const Pools: React.FC = () => {
   const farms = useFarms()
   const pools = usePools(account)
   const bnbPriceUSD = usePriceBnbBusd()
-  const cakebusd = usePriceCakeBusd() // slimePriceInBusd
+  const cakebusd = usePriceMashBusd() // slimePriceInBusd
   const block = useBlock()
   let bbprice = new BigNumber(0)
 

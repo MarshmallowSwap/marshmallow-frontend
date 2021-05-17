@@ -10,7 +10,7 @@ import UnlockButton from 'components/UnlockButton'
 import CakeHarvestBalance from './CakeHarvestBalance'
 import CakeWalletBalance from './CakeWalletBalance'
 import useAllEarnings from '../../../hooks/useAllEarnings'
-import { usePriceCakeBusd } from '../../../state/hooks'
+import { usePriceMashBusd } from '../../../state/hooks'
 import { getCakeAddress } from '../../../utils/addressHelpers'
 import useTokenBalance from '../../../hooks/useTokenBalance'
 import { getBalanceNumber } from '../../../utils/formatBalance'
@@ -45,7 +45,7 @@ const FarmedStakingCard = () => {
   const TranslateString = useI18n()
   const farmsWithBalance = useFarmsWithBalance()
   const cakeBalance = getBalanceNumber(useTokenBalance(getCakeAddress()))
-  const eggPrice = usePriceCakeBusd().toNumber()
+  const eggPrice = usePriceMashBusd().toNumber()
   const earningsSum = farmsWithBalance.reduce((accum, farm) => {
     return accum + new BigNumber(farm.balance).div(new BigNumber(10).pow(18)).toNumber()
   }, 0)

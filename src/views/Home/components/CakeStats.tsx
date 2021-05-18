@@ -17,9 +17,9 @@ const StyledCakeStats = styled(Card)`
 const Row = styled.div`
   align-items: center;
   display: flex;
-  font-size: 14px;
+  font-size: 20px;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 `
 
 const CakeStats = () => {
@@ -40,24 +40,24 @@ const CakeStats = () => {
   return (
     <StyledCakeStats>
       <CardBody>
-        <Heading size="xl" mb="24px">
+        <Heading size="xl" mb="40px">
           {TranslateString(534, 'Egg Stats')}
         </Heading>
         <Row>
-          <Text fontSize="14px">{TranslateString(536, 'Total MASH Supply')}</Text>
-          {cakeSupply && <CardValue fontSize="14px" value={cakeSupply} decimals={0} />}
+          <Text fontSize="20px">{TranslateString(536, 'Total MASH Supply')}</Text>
+          {cakeSupply && <CardValue fontSize="20px" value={cakeSupply} decimals={0} />}
         </Row>
         <Row>
-          <Text fontSize="14px">{TranslateString(999, 'Market Cap')}</Text>
-          <CardValue fontSize="14px" value={getBalanceNumber(marketCap)} decimals={0} prefix="$" />
+          <Text fontSize="20px">{TranslateString(999, 'Market Cap')}</Text>
+          <CardValue fontSize="20px" value={getBalanceNumber(marketCap)} decimals={0} prefix="$" />
         </Row>
         <Row>
-          <Text fontSize="14px">{TranslateString(538, 'Total MASH Burned')}</Text>
-          <CardValue fontSize="14px" value={getBalanceNumber(burnedBalance)} decimals={0} />
+          <Text fontSize="20px">{TranslateString(538, 'Total MASH Burned')}</Text>
+          <CardValue fontSize="20px" value={getBalanceNumber(burnedBalance)} decimals={0} />
         </Row>
         <Row>
-          <Text fontSize="14px">{TranslateString(540, 'New EGG/block')}</Text>
-          <Text bold fontSize="14px">{mashPerBlock}</Text>
+          <Text fontSize="20px">{TranslateString(540, 'New EGG/block')}</Text>
+          <Text bold fontSize="20px">{mashPerBlock}</Text>
         </Row>
       </CardBody>
     </StyledCakeStats>

@@ -92,24 +92,53 @@ export const usePriceMashBusd = (): BigNumber => {
 }
 
 export const useTotalValue = (): BigNumber => {
-  const farms = useFarms();
-  const launchPools = useLaunchPools();
-  const bnbPrice = usePriceBnbBusd();
-  const mashPrice = usePriceMashBusd();
-  let value = new BigNumber(0);
+  let value = new BigNumber(0)
+  const totalFarmsValue = useFarmsValue()
+  const totalLaunchPoolValue = useLaunchPoolValue()
+  value = BigNumber.sum(totalFarmsValue, totalLaunchPoolValue)
+  return value
+}
+
+export const useFarmsValue = () => {
+  const farms = useFarms()
+  const bnbPrice = usePriceBnbBusd()
+  const mashPrice = usePriceMashBusd()
+  let value = new BigNumber(0)
   for (let i = 0; i < farms.length; i++) {
     const farm = farms[i]
     if (farm.lpTotalInQuoteToken) {
       let val;
       if (farm.quoteTokenSymbol === QuoteToken.BNB) {
-        val = (bnbPrice.times(farm.lpTotalInQuoteToken));
-      } else if (farm.quoteTokenSymbol === QuoteToken.CAKE) {
-        val = (mashPrice.times(farm.lpTotalInQuoteToken));
+        val = (bnbPrice.times(farm.lpTotalInQuoteToken))
+      } else if (farm.quoteTokenSymbol === QuoteToken.CAKE) { // TODO: should be updated with quiteToken.MASH
+        val = (mashPrice.times(farm.lpTotalInQuoteToken))
       } else {
-        val = (farm.lpTotalInQuoteToken);
+        val = (farm.lpTotalInQuoteToken)
+      }
+      value = value.plus(val)
+    }
+  }
+
+  return value
+}
+
+export const useLaunchPoolValue = () => {
+  const launchPools = useLaunchPools();
+  const bnbPrice = usePriceBnbBusd();
+  const mashPrice = usePriceMashBusd();
+  let value = new BigNumber(0);
+  launchPools.forEach(launchPool => {
+    if (launchPool.stakingTokenAddress) {
+      let val;
+      if (launchPool.stakingTokenName === QuoteToken.MASH) {
+        val = mashPrice.times(launchPool.totalStaked).div(new BigNumber(10).pow(launchPool.tokenDecimals))
+      } else if (launchPool.stakingTokenName === QuoteToken.BNB) {
+        val = bnbPrice.times(launchPool.totalStaked).div(new BigNumber(10).pow(launchPool.tokenDecimals))
+      } else {
+        val = launchPool.totalStaked.div(new BigNumber(10).pow(launchPool.tokenDecimals))
       }
       value = value.plus(val);
     }
-  }
+  })
   return value;
 }

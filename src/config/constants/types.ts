@@ -85,6 +85,7 @@ export interface PoolConfig {
   tokenDecimals: number
   startBlock? :number
   endBlock? : number
+  isApe?: boolean
   slimeRounding? : number,
   isSlimeAMM? : boolean
 }

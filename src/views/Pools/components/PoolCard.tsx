@@ -51,7 +51,8 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
     isFinished,
     userData,
     stakingLimit,
-    burnFee
+    burnFee,
+    isApe
   } = pool
   // Pools using native BNB behave differently than pools using a token
   const isBnbPool = poolCategory === PoolCategory.BINANCE
@@ -114,7 +115,8 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
     <Card isActive={isCardActive} isFinished={isFinished && sousId !== 0}>
       {isFinished && sousId !== 0 && <PoolFinishedSash />}
       <div style={{ padding: '24px' }}>
-        <CardTitle isFinished={isFinished && sousId !== 0}>
+        {isApe && <ApeMark />}
+        <CardTitle isApe={isApe} isFinished={isFinished && sousId !== 0}>
           {isOldSyrup && '[OLD]'} {tokenName} {TranslateString(348, 'Pool')}
         </CardTitle>
         <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
@@ -247,6 +249,19 @@ const StyledActionSpacer = styled.div`
 const StyledDetails = styled.div`
   display: flex;
   font-size: 14px;
+`
+
+const ApeMark = styled.div`
+  background-image: url(images/ribbon_ape.svg);
+  background-position: right top;
+  background-repeat: no-repeat;
+  height: 7em;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 5em;
+  background-size: contain;
+  z-index: 999;
 `
 
 export default PoolCard

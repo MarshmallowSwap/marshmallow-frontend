@@ -26,6 +26,11 @@ export const useFarms = (): Farm[] => {
   return farms
 }
 
+export const useLaunchPools = (): Pool[] => {
+  const pools = useSelector((state: State) => state.pools.data)
+  return pools
+}
+
 export const useFarmFromPid = (pid): Farm => {
   const farm = useSelector((state: State) => state.farms.data.find((f) => f.pid === pid))
   return farm
@@ -88,6 +93,7 @@ export const usePriceMashBusd = (): BigNumber => {
 
 export const useTotalValue = (): BigNumber => {
   const farms = useFarms();
+  const launchPools = useLaunchPools();
   const bnbPrice = usePriceBnbBusd();
   const mashPrice = usePriceMashBusd();
   let value = new BigNumber(0);

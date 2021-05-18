@@ -102,6 +102,32 @@ const pools: PoolConfig[] = [
     burnFee: 3,
     slimeRounding: 5,
     image: 'mash-plum'
+  },
+  {
+    sousId: 4,
+    tokenName: 'MASH-TAKO APE LP',
+    stakingTokenName: QuoteToken[MASH],
+    stakingTokenAddress: '0x787732f27d18495494cea3792ed7946bbcff8db2',
+    contractAddress: {
+      97: '0x56d93Aefaf766b8DA4a57b9805057BD2822fC73a',
+      56: '0x56d93Aefaf766b8DA4a57b9805057BD2822fC73a',
+    },
+    poolCategory: PoolCategory.CORE,
+    projectLink: 'https://apeswap.finance/',
+    harvest: true,
+    isFinished: false,
+    tokenPerBlock: '0.008933531746031746',
+    sortOrder: 1,
+    tokenDecimals: 18,
+    startBlock: 7516658,
+    endBlock: 7718258,
+    withBurnFee: true,
+    isLPStake:false,
+    isLPReward:true,
+    isApe: true,
+    burnFee: 3,
+    slimeRounding: 5,
+    image: 'mash-tako'
   }
   // {
   //   sousId: 1,

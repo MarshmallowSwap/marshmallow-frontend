@@ -315,9 +315,57 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
   },
+  {
+    pid: 21,
+    risk: 5,
+    lpSymbol: 'MASH-PLUM LP',
+    lpAddresses: {
+      97: '',
+      56: '0x9EC365D77dCF2b3230399a23D35aEF4318de710D',
+    },
+    tokenSymbol: 'MASH',
+    tokenAddresses: {
+      97: '',
+      56: '0x787732f27d18495494cea3792ed7946bbcff8db2',
+    },
+    quoteTokenSymbol: QuoteToken.PLUM,
+    quoteTokenAdresses: contracts.plum,
+    depositUrl: 'https://exchange.pancakeswap.finance/#/add/0x787732f27d18495494cea3792ed7946bbcff8db2/0xdE8eD8c9480EA12D050182AA99630B235dE30f83'
+  },
+  {
+    pid: 22,
+    risk: 5,
+    lpSymbol: 'MASH-SLIME LP',
+    lpAddresses: {
+      97: '',
+      56: '0xb442780739037577920857DaD91259416b72DE7a',
+    },
+    tokenSymbol: 'MASH',
+    tokenAddresses: {
+      97: '',
+      56: '0x787732f27d18495494cea3792ed7946bbcff8db2',
+    },
+    quoteTokenSymbol: QuoteToken.SLIME,
+    quoteTokenAdresses: contracts.slime,
+    depositUrl: 'https://dex.slime.finance/#/add/0x23b06097F8FE2DD9D3dF094D3ee8319Daa8756c1/0x787732f27d18495494cea3792ed7946bbcff8db2'
+  },
+  {
+    pid: 23,
+    risk: 5,
+    lpSymbol: 'MASH-TAKO LP',
+    lpAddresses: {
+      97: '',
+      56: '0xC6D926086b29774b10530ab9e02980e9586a061F',
+    },
+    tokenSymbol: 'MASH',
+    tokenAddresses: {
+      97: '',
+      56: '0x787732f27d18495494cea3792ed7946bbcff8db2',
+    },
+    quoteTokenSymbol: QuoteToken.TAKO,
+    quoteTokenAdresses: contracts.tako,
+    depositUrl: 'https://dex.apeswap.finance/#/add/0x2F3391AeBE27393aBa0a790aa5E1577fEA0361c2/0x787732f27d18495494cea3792ed7946bbcff8db2'
+  },
 ]
-
-
-
 
 export default farms

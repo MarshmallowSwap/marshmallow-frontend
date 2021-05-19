@@ -14,6 +14,7 @@ export interface ExpandableSectionProps {
   quoteTokenAdresses?: Address
   quoteTokenSymbol?: string
   tokenAddresses: Address
+  depositUrl?: string
 }
 
 const Wrapper = styled.div`
@@ -44,20 +45,27 @@ const DetailsSection: React.FC<ExpandableSectionProps> = ({
   quoteTokenAdresses,
   quoteTokenSymbol,
   tokenAddresses,
+  depositUrl
 }) => {
+
   const TranslateString = useI18n()
   const liquidityUrlPathParts = getLiquidityUrlPathParts({ quoteTokenAdresses, quoteTokenSymbol, tokenAddresses })
+
+  const depositLink = React.useMemo(() => {
+    if (depositUrl) {
+      return depositUrl
+    }
+    if (isTokenOnly) {
+      return `https://exchange.marshmallowdefi.com/#/swap/${tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
+    }
+    return `https://exchange.marshmallowdefi.com/#/add/${liquidityUrlPathParts}`
+  }, [isTokenOnly, tokenAddresses, liquidityUrlPathParts, depositUrl]);
 
   return (
     <Wrapper>
       <Flex justifyContent="space-between">
         <Text>{TranslateString(316, 'Stake')}:</Text>
-        <StyledLinkExternal href={
-          isTokenOnly ?
-            `https://exchange.marshmallowdefi.com/#/swap/${tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
-            :
-            `https://exchange.marshmallowdefi.com/#/add/${liquidityUrlPathParts}`
-        }>
+        <StyledLinkExternal href={depositLink}>
           {lpLabel}
         </StyledLinkExternal>
       </Flex>

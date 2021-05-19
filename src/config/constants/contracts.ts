@@ -39,4 +39,16 @@ export default {
     56: '0xd456be0ff7007b3d8ad656136487a23e771f5762',
     97: '',
   },
+  plum: {
+    56: '0xdE8eD8c9480EA12D050182AA99630B235dE30f83',
+    97: '',
+  },
+  slime: {
+    56: '0x23b06097F8FE2DD9D3dF094D3ee8319Daa8756c1',
+    97: '',
+  },
+  tako: {
+    56: '0x2F3391AeBE27393aBa0a790aa5E1577fEA0361c2',
+    97: ''
+  }
 }

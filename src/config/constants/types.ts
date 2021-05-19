@@ -29,7 +29,10 @@ export enum QuoteToken {
   'WCAKE' = 'WCAKE',
   'VAULT' = 'VAULT',
   'BTCB' = 'BTCB',
-  'MASH' = 'MASH'
+  'MASH' = 'MASH',
+  'PLUM' = 'PLUM',
+  'SLIME' = 'SLIME',
+  'TAKO' = 'TAKO'
 }
 
 export enum PoolCategory {
@@ -60,6 +63,7 @@ export interface FarmConfig {
     earnLabel: string
     endBlock: number
   }
+  depositUrl?: string
 }
 
 export interface PoolConfig {

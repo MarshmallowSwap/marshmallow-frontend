@@ -47,7 +47,7 @@ const Hero = styled.div`
 `
 
 const BannerImg = styled.img`
-  height: 34vh;
+  height: 32vh;
   width: 56vw;
   object-fit: cover;
   position: absolute;

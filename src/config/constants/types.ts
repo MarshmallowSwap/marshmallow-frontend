@@ -64,6 +64,7 @@ export interface FarmConfig {
     endBlock: number
   }
   depositUrl?: string
+  image?: string
 }
 
 export interface PoolConfig {

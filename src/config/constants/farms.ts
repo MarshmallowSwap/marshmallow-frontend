@@ -96,8 +96,9 @@ const farms: FarmConfig[] = [
       97: '',
       56: '0x787732f27d18495494cea3792ed7946bbcff8db2',
     },
-    quoteTokenSymbol: QuoteToken.WCAKE,
-    quoteTokenAdresses: contracts.wcake,
+    quoteTokenSymbol: QuoteToken.MASH,
+    quoteTokenAdresses: contracts.cake,
+    image: 'mash-cake',
   },
   {
     pid: 21,
@@ -129,9 +130,10 @@ const farms: FarmConfig[] = [
       97: '',
       56: '0x787732f27d18495494cea3792ed7946bbcff8db2',
     },
-    quoteTokenSymbol: QuoteToken.SLIME,
-    quoteTokenAdresses: contracts.slime,
-    depositUrl: 'https://dex.slime.finance/#/add/0x23b06097F8FE2DD9D3dF094D3ee8319Daa8756c1/0x787732f27d18495494cea3792ed7946bbcff8db2'
+    quoteTokenSymbol: QuoteToken.MASH,
+    quoteTokenAdresses: contracts.cake,
+    depositUrl: 'https://dex.slime.finance/#/add/0x23b06097F8FE2DD9D3dF094D3ee8319Daa8756c1/0x787732f27d18495494cea3792ed7946bbcff8db2',
+    image: 'mash-slime'
   },
   {
     pid: 23,
@@ -146,9 +148,10 @@ const farms: FarmConfig[] = [
       97: '',
       56: '0x787732f27d18495494cea3792ed7946bbcff8db2',
     },
-    quoteTokenSymbol: QuoteToken.TAKO,
-    quoteTokenAdresses: contracts.tako,
-    depositUrl: 'https://dex.apeswap.finance/#/add/0x2F3391AeBE27393aBa0a790aa5E1577fEA0361c2/0x787732f27d18495494cea3792ed7946bbcff8db2'
+    quoteTokenSymbol: QuoteToken.MASH,
+    quoteTokenAdresses: contracts.cake,
+    depositUrl: 'https://dex.apeswap.finance/#/add/0x2F3391AeBE27393aBa0a790aa5E1577fEA0361c2/0x787732f27d18495494cea3792ed7946bbcff8db2',
+    image: 'mash-tako'
   },
   {
     pid: 2,

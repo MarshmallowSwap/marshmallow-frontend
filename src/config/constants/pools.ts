@@ -160,8 +160,8 @@ const pools: PoolConfig[] = [
     stakingTokenName: QuoteToken[MASH],
     stakingTokenAddress: '0x787732f27d18495494cea3792ed7946bbcff8db2',
     contractAddress: {
-      97: '0x99B75635683E874d8ea3e2696a25e25AeDFDC454',
-      56: '0x99B75635683E874d8ea3e2696a25e25AeDFDC454',
+      97: '0x08fa76bAA1D731F54248d45Ab19F9E8642f49b2D',
+      56: '0x08fa76bAA1D731F54248d45Ab19F9E8642f49b2D',
     },
     poolCategory: PoolCategory.CORE,
     projectLink: 'https://marshmallowdefi.com/',

@@ -262,7 +262,8 @@ const Pools: React.FC = () => {
     const totalStakingTokenInPool = cakebusd.times(getBalanceNumber(pool.totalStaked))
     const apy = totalRewardPricePerYear.div(totalStakingTokenInPool).times(100)
 
-    console.log(`aj : ***** poolName: ${pool.tokenName} pool.endBlock: ${pool.endBlock}`);
+    console.log(`aj : ***** poolName: ${pool.tokenName} bbprice: ${bbprice}`);
+    
     return {
       ...pool,
       isFinished: pool.sousId === 0 ? false : pool.isFinished || block > pool.endBlock,

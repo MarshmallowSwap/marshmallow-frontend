@@ -174,7 +174,7 @@ const pools: PoolConfig[] = [
     endBlock: 7807438,
     withBurnFee: true,
     isLPStake: false,
-    isLPReward: true,
+    isLPReward: false,
     burnFee: 3,
     slimeRounding: 5,
     image: 'mash-btcb'
@@ -199,7 +199,7 @@ const pools: PoolConfig[] = [
     endBlock: 7807438,
     withBurnFee: true,
     isLPStake: false,
-    isLPReward: true,
+    isLPReward: false,
     burnFee: 3,
     slimeRounding: 5,
     image: 'mash-wcake'

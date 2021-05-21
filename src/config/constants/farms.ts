@@ -64,8 +64,9 @@ const farms: FarmConfig[] = [
       97: '',
       56: '0x787732f27d18495494cea3792ed7946bbcff8db2',
     },
-    quoteTokenSymbol: QuoteToken.BTCB,
-    quoteTokenAdresses: contracts.btcb,
+    quoteTokenSymbol: QuoteToken.MASH,
+    quoteTokenAdresses: contracts.cake,
+    image: 'mash-btcb'
   },
   {
     pid: 14,

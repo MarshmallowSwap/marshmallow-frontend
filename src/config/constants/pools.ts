@@ -189,7 +189,7 @@ const pools: PoolConfig[] = [
       56: '0xdeB31d3cb07f9F25D162B4cF4dBC79BC2983d39a',
     },
     poolCategory: PoolCategory.CORE,
-    projectLink: 'https://pancake.com/',
+    projectLink: 'https://pancakeswap.finance/',
     harvest: true,
     isFinished: false,
     tokenPerBlock: '0.000570436507936507',

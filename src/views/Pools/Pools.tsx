@@ -231,8 +231,6 @@ const Pools: React.FC = () => {
       stakepriceBUSD = bnbPriceUSD.multipliedBy(stakePrice)
     }
 
-    console.log('StakepriceBUSD', pool.stakingTokenAddress,bnbPriceUSD.toNumber() ,stakePrice.toNumber(), stakepriceBUSD.toNumber(),cakebusd.toNumber())
-
     if (pool.userData) {
       if (pool.isLPReward) {
         bbprice = price
@@ -264,7 +262,7 @@ const Pools: React.FC = () => {
     const totalStakingTokenInPool = cakebusd.times(getBalanceNumber(pool.totalStaked))
     const apy = totalRewardPricePerYear.div(totalStakingTokenInPool).times(100)
 
-    console.log(`aj : ***** poolName: ${pool.tokenName} pool.totalStaked: ${pool.totalStaked}`);
+    console.log(`aj : ***** poolName: ${pool.tokenName} pool.endBlock: ${pool.endBlock}`);
     return {
       ...pool,
       isFinished: pool.sousId === 0 ? false : pool.isFinished || block > pool.endBlock,
@@ -276,7 +274,6 @@ const Pools: React.FC = () => {
 
   const [finishedPools, openPools] = partition(poolsWithApy, (pool) => pool.isFinished)
 
-  console.log('aj : ***** openPools => ', openPools);
   return (
     <Page>
       <Hero>

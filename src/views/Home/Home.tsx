@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Heading, Text, BaseLayout } from '@pancakeswap-libs/uikit'
 import useI18n from 'hooks/useI18n'
 import Page from 'components/layout/Page'
+import Background from 'components/layout/Background';
 import FarmStakingCard from './components/FarmStakingCard'
 import LotteryCard from './components/LotteryCard'
 import CakeStats from './components/CakeStats'
@@ -83,6 +84,7 @@ const Home: React.FC = () => {
 
   return (
     <Page>
+      <Background src='images/background.png' alt='background' />
       <Hero>
         <Heading as="h1" size="xl" mb="24px" color="secondary">
           {/* {TranslateString(576, 'MarshamallowDeFi')} */}

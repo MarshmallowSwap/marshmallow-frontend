@@ -19,6 +19,7 @@ import { useFarms, usePriceBnbBusd, usePools, usePriceMashBusd } from 'state/hoo
 import { QuoteToken, PoolCategory } from 'config/constants/types'
 import FlexLayout from 'components/layout/Flex'
 import Page from 'components/layout/Page'
+import Background from 'components/layout/Background';
 import Coming from './components/Coming'
 import PoolCard from './components/PoolCard'
 import PoolTabButtons from './components/PoolTabButtons'
@@ -261,8 +262,6 @@ const Pools: React.FC = () => {
     const totalRewardPricePerYear = bbprice.times(pool.tokenPerBlock).times(BLOCKS_PER_YEAR)
     const totalStakingTokenInPool = cakebusd.times(getBalanceNumber(pool.totalStaked))
     const apy = totalRewardPricePerYear.div(totalStakingTokenInPool).times(100)
-
-    console.log(`aj : ***** poolName: ${pool.tokenName} bbprice: ${bbprice}`);
     
     return {
       ...pool,
@@ -277,6 +276,7 @@ const Pools: React.FC = () => {
 
   return (
     <Page>
+      <Background src='images/background.png' alt='background' />
       <Hero>
         <div>
           <Heading as="h1" size="xxl" mb="16px">

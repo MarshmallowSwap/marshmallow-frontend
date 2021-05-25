@@ -62,7 +62,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
   const block = useBlock()
   const { onApprove } = useSousApprove(stakingTokenContract, sousId)
   const { onStake } = useSousStake(sousId, isBnbPool)
-  const { onUnstake } = useSousUnstake(sousId)
+  const { onUnstake } = useSousUnstake(sousId, isFinished)
   const { onReward } = useSousHarvest(sousId, isBnbPool)
 
   const [requestedApproval, setRequestedApproval] = useState(false)

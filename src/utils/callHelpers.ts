@@ -61,14 +61,14 @@ export const sousUnstake = async (sousChefContract, amount, account, isFinished)
         return tx.transactionHash
       })
   }
-  if (isFinished) {
-    return sousChefContract.methods
-      .emergencyWithdraw()
-      .send({ from: account })
-      .on('transactionHash', (tx) => {
-        return tx.transactionHash
-      })
-  }
+  // if (isFinished) {
+  //   return sousChefContract.methods
+  //     .emergencyWithdraw()
+  //     .send({ from: account })
+  //     .on('transactionHash', (tx) => {
+  //       return tx.transactionHash
+  //     })
+  // }
   return sousChefContract.methods
     .withdraw(new BigNumber(amount).times(new BigNumber(10).pow(18)).toString())
     .send({ from: account })
